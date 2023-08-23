@@ -10,11 +10,11 @@ class FileStorage:
 
     def all(self, cls=None):
         if cls != None:
-            filtered_objs = {}
+            filt_objs = {}
             for key, value in FileStorage.__objects.items():
                 if (isinstance(value, cls)):
-                    filtered_objs[key] = value
-            return filtered_objs
+                    filt_objs[key] = value
+            return filt_objs
         return FileStorage.__objects
 
 
@@ -36,11 +36,11 @@ class FileStorage:
         """deletes an object from __objects if present"""
         if (obj != None):
             obj_class = obj.__class__.__name__
-            obj_id = obj.id # get id of the object to be deleted
-            obj_to_delete = obj_class+'.'+obj_id
+            obj_idd = obj.id 
+            to_delete = obj_class+'.'+obj_idd
 
-            if obj_to_delete in FileStorage.__objects.keys():
-                del FileStorage.__objects[obj_to_delete]
+            if to_delete in FileStorage.__objects.keys():
+                del FileStorage.__objects[to_delete]
 
 
     def reload(self):
