@@ -13,6 +13,7 @@ class City(BaseModel, Base):
     Attributes:
         state_id: The state id
         name: input name of the state
+        places: relationship btn places & cities
     """
     __tablename__ = "cities"
     name = Column(String(128), nullable=False)
