@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """This is the city class model"""
-from sqlalchemy.ext.declarative import declarative_base
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy import ForeignKey
@@ -20,4 +19,3 @@ class City(BaseModel, Base):
     state_id = Column(String(60), ForeignKey('states.id'), nullable=False)
     places = relationship("Place", cascade='all, delete, delete-orphan',
                           backref="cities")
-    
