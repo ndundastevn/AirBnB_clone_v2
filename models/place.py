@@ -25,20 +25,20 @@ class Place(BaseModel, Base):
     Represents Place on db
 
     Attributes:
-    __tablename__ (str): The name of the MySQL table to store places.
-    city_id (sqlalchemy String): The place's city id.
-    user_id (sqlalchemy String): The place's user id.
-    name (sqlalchemy String): The name.
-    description (sqlalchemy String): The description.
-    number_rooms (sqlalchemy Integer): The number of rooms.
-    number_bathrooms (sqlalchemy Integer): The number of bathrooms.
-    max_guest (sqlalchemy Integer): The maximum number of guests.
-    price_by_night (sqlalchemy Integer): The price by night.
-    latitude (sqlalchemy Float): The place's latitude.
-    longitude (sqlalchemy Float): The place's longitude.
-    reviews (sqlalchemy relationship): The Place-Review relationship.
-    amenities (sqlalchemy relationship): The Place-Amenity relationship.
-    amenity_ids (list): An id list of all linked amenities.
+    __tablename__ (str): name places table.
+    city_id (sqlalchemy String): city id.
+    user_id (sqlalchemy String): user id.
+    name (sqlalchemy String): name.
+    description (sqlalchemy String): description.
+    number_rooms (sqlalchemy Integer): number of rooms.
+    number_bathrooms (sqlalchemy Integer): number of bathrooms.
+    max_guest (sqlalchemy Integer): max number of guests.
+    price_by_night (sqlalchemy Integer): price by night.
+    latitude (sqlalchemy Float): latitude.
+    longitude (sqlalchemy Float): longitude.
+    reviews (sqlalchemy relationship): Place-Review relationship.
+    amenities (sqlalchemy relationship): Place-Amenity relationship.
+    amenity_ids (list): id list of all linked amenities.
     """
     if models.storage_t == 'db':
         __tablename__ = 'places'
