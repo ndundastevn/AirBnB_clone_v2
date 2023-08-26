@@ -9,8 +9,8 @@ from sqlalchemy.orm import relationship
 
 
 class Review(BaseModel):
-    """ 
-    Review classto store review information 
+    """
+    Review classto store review information
 
     Attributes:
     __tablename__ (str): Reviews entity on db.

@@ -7,17 +7,18 @@ from sqlalchemy import Column, String, Integer, Float, ForeignKey, Table
 from sqlalchemy.orm import relationship
 
 
-class Place(BaseModel):
-    if models.storage_t == 'db':
-        place_amenities = Table('place_amenity', Base.metadata,
-                               Column('place_id', String(60),
-                                      ForeignKey('places.id', onupdate='CASCADE',
-                                                 ondelete='CASCADE'),
-                                      primary_key=True),
-                               Column('amenity_id', String(60),
-                                      ForeignKey('amenities.id', onupdate='CASCADE',
-                                                 ondelete='CASCADE'),
-                                      primary_key=True))
+if models.storage_t == 'db':
+    place_amenity = Table('place_amenity', Base.metadata,
+                          Column('place_id', String(60),
+                                 ForeignKey('places.id',
+                                            onupdate='CASCADE',
+                                            ondelete='CASCADE'),
+                                 primary_key=True),
+                          Column('amenity_id', String(60),
+                                 ForeignKey('amenities.id',
+                                            onupdate='CASCADE',
+                                            ondelete='CASCADE'),
+                                 primary_key=True))
 
 
 class Place(BaseModel, Base):

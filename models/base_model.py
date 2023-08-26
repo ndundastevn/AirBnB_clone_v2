@@ -55,7 +55,7 @@ class BaseModel:
         """
         Returns dictionary representation of the BaseModel instance.
 
-        Includes all key/value pairs of object 
+        Includes all key/value pairs of object
         """
         my_dict = self.__dict__.copy()
         my_dict["__class__"] = str(type(self).__name__)
