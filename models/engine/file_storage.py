@@ -9,6 +9,7 @@ class FileStorage:
     __objects = {}
 
     def all(self, cls=None):
+        """Returns a dict of instantiated objects"""
         if cls is not None:
             filt_objs = {}
             for key, value in FileStorage.__objects.items():
