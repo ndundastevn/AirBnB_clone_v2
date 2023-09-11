@@ -3,12 +3,12 @@
 from fabric.api import *
 
 
-env.hosts = ['', '']
+env.hosts = ['3.84.239.73', '54.144.133.57']
 env.user = "ubuntu"
 
 
 def do_clean(number=0):
-    """ method cleans up after deployment"""
+    """ method to cleans up after deployment"""
 
     number = int(number)
 
